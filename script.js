@@ -98,9 +98,11 @@ function resetGame() {
         let countdownInterval = setInterval(() => {
             messsageEl.innerHTML = `New game starting in ${countdown} seconds...`;
             countdown--;
+            submitButtonEl.disabled = true;
             if (countdown < 0) {
                 clearInterval(countdownInterval);
                 messsageEl.innerHTML = '';
+                submitButtonEl.disabled = false;
                 playRound();
             }
         }
